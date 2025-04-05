@@ -2,165 +2,56 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ministerio de Alabanza y Adoración</title>
+  <title>Ministerio de Alabanza</title>
   <style>
     body {
-      background-color: #ffffff;
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #333;
+      background-image: url('img/logo-cvc.png');
+      background-size: 300px;
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-color: white;
+      font-family: Arial, sans-serif;
+      padding-top: 350px; /* espacio para que el logo no tape el contenido */
     }
 
-    header {
+    .contenedor {
       text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .reproductor {
+      margin-bottom: 30px;
+    }
+
+    .letra {
+      background-color: #f5f5f5;
       padding: 20px;
-    }
-
-    header img {
-      max-width: 180px;
-    }
-
-    h1 {
-      font-size: 2em;
-      margin-top: 10px;
-      color: #800020; /* vino tinto */
-    }
-
-    .container {
-      max-width: 700px;
-      margin: 30px auto;
-      padding: 20px;
-    }
-
-    .audio-player {
-      background-color: #800020;
-      border-radius: 20px;
-      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    audio {
-      width: 100%;
-      outline: none;
-    }
-
-    .lyrics-box {
-      background-color: #f9f9f9;
-      border-radius: 16px;
-      padding: 20px;
-      margin-top: 30px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      font-size: 18px;
       line-height: 1.6;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="IMG-20250123-WA0005.jpg" alt="Logo Rey de Gloria">
-    <h1>Iglesia Cuadrangular Rey de Gloria</h1>
-  </header>
 
-  <div class="container">
-    <div class="audio-player">
+  <div class="contenedor">
+    <div class="reproductor">
       <audio controls>
-        <source src="audio/audio/Marco-barrrientos-hossana.mp3" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
+        <source src="mi-alabanza.mp3" type="audio/mpeg">
+        Tu navegador no soporta el reproductor de audio.
       </audio>
     </div>
 
-    <div class="centrar-texto">
-      <h2>Letra de la canción</h2>
-      <p>
-        Levantamos un clamor
-Por sanidad y redención
-Muéstranos lo que tú ves
-Los secretos de tu corazón
-Un pueblo unido pide hoy
-Tu libertad y salvación
-Ármanos con tu valor
-Lo que deseamos es revolución
-Que el cielo se parta en dos
-Inúndanos
-En el desierto broten ríos
-Vida sopla hoy
-Hosanna al rey de salvación
-Hosanna al Dios Altísimo
-Hosanna
-Jesucristo, Jesucristo es rey
-Hosanna al rey de salvación
-Hosanna al Dios Altísimo
-Hosanna
-Jesucristo, Jesucristo es rey
-Levantamos un clamor
-Por sanidad y redención
-Muéstranos lo que tú ves
-Los secretos de tu corazón
-Un pueblo unido pide hoy
-Tu libertad y salvación
-Ármanos con tu valor
-Lo que deseamos es revolución
-Que el cielo se parta en dos
-Inúndanos
-En el desierto broten ríos
-Vida sopla hoy
-Hosanna al rey de salvación
-Hosanna al Dios Altísimo
-Hosanna
-Jesucristo, Jesucristo es rey
-Hosanna al rey de salvación
-Hosanna al Dios Altísimo
-Hosanna
-Jesucristo, Jesucristo es rey
-Hosanna
-Hosanna
-Hosanna
-Hosanna
-Hosanna al rey
-Hosanna
-Hosanna
-Hosanna al rey
-Hosanna
-Hosanna
-Hosanna al rey
-Hosanna
-Hosanna
-Hosanna al rey
-Hosanna al rey de salvación
-Hosanna al Dios Altísimo
-Hosanna
-Jesucristo, Jesucristo es rey
-Hosanna al rey de salvación
-Hosanna al Dios Altísimo
-Hosanna
-Jesucristo, Jesucristo es rey, eh hey
-Sí señor
-Nuestro clamor
-Es oído en los cielos
-Nuestro clamor es oído en los cielos
-El clamor de los redimidos
-La manifestación gloriosa de los hijos de Dios
-Que claman por salvación
-Salva Señor
-Salva Señor
-Oh
-Y declaramos que los cielos se abren sobre de esta nación
-Declaramos que los cielos se abren sobre de esta nación
-En el nombre de Jesús
-Yo quiero que tu declares conmigo
-Padre Celestial
-Yo creo
-En el poder de la sangre de Jesús
-En el poder del Espíritu Santo
-Y en el poder de tu gracia
-Y yo te pido
-Abre los cielos sobre de esta nación
-Muestra tu gloria
-Muestra tu poder una vez más
-Sí señor, yeah
+    <div class="letra">
+      <p>Esta es la letra de la canción...</p>
+      <p>Verso 1...</p>
+      <p>Coro...</p>
+      <p>Verso 2...</p>
     </div>
   </div>
+
 </body>
 </html>
