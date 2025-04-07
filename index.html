@@ -8,12 +8,12 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #0f0f0f;
+      background-color: #1a1a1a;
       color: white;
     }
 
     header {
-      background-color: #1DB954;
+      background-color: #e54747; /* Rojo-naranja como MasVida */
       text-align: center;
       padding: 20px 10px;
       font-size: 24px;
@@ -38,79 +38,11 @@
     }
 
     .botones button {
-      background-color: #1DB954;
+      background-color: #e54747;
       border: none;
       color: white;
       padding: 12px 24px;
       border-radius: 30px;
       font-size: 16px;
       cursor: pointer;
-      transition: background-color 0.3s, transform 0.3s;
-      min-width: 140px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-
-    .botones button:hover {
-      background-color: #17a64a;
-      transform: scale(1.05);
-    }
-
-    .cancion {
-      display: none;
-      background-color: #1e1e1e;
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-      max-width: 100%;
-      margin: auto;
-    }
-
-    audio {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
-    .letra {
-      text-align: left;
-      color: #cccccc;
-      line-height: 1.6;
-      white-space: pre-line;
-      font-size: 15px;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        font-size: 20px;
-      }
-
-      .botones button {
-        font-size: 14px;
-        padding: 10px 20px;
-      }
-
-      .letra {
-        font-size: 14px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <header>Iglesia Cuadrangular Rey de Gloria</header>
-
-  <div class="container">
-    <div class="botones">
-      <button onclick="mostrarCancion(1)">Canción 1</button>
-      <button onclick="mostrarCancion(2)">Canción 2</button>
-      <button onclick="mostrarCancion(3)">Canción 3</button>
-      <button onclick="mostrarCancion(4)">Canción 4</button>
-    </div>
-
-    <div id="cancion1" class="cancion">
-      <audio controls>
-        <source src="cancion1.mp3" type="audio/mpeg">
-        Tu navegador no soporta el audio.
-      </audio>
-      <div class="letra">
-        Esta es la letra de la Canción
+      transition: background-color 0.3s, transform
