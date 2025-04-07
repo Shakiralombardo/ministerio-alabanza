@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reproductor de Canciones</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iglesia Cuadrangular Rey de Gloria</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #121212;
-      color: #fff;
-      text-align: center;
+      background-color: #0f0f0f;
+      color: white;
     }
 
     header {
       background-color: #1DB954;
-      color: white;
+      text-align: center;
       padding: 20px 10px;
-      font-size: 22px;
+      font-size: 24px;
       font-weight: bold;
       letter-spacing: 1px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
     }
 
     .botones {
-      margin: 30px 10px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
+      gap: 15px;
+      margin: 30px 0;
     }
 
     .botones button {
       background-color: #1DB954;
-      color: white;
       border: none;
-      padding: 12px 20px;
+      color: white;
+      padding: 12px 24px;
       border-radius: 30px;
       font-size: 16px;
       cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      flex: 1 1 140px;
-      max-width: 180px;
+      transition: background-color 0.3s, transform 0.3s;
+      min-width: 140px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
 
     .botones button:hover {
@@ -52,35 +57,40 @@
 
     .cancion {
       display: none;
-      margin: 20px auto;
-      padding: 20px;
-      max-width: 90%;
       background-color: #1e1e1e;
+      padding: 20px;
       border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      max-width: 100%;
+      margin: auto;
     }
 
     audio {
       width: 100%;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      background-color: #333;
+      border-radius: 10px;
+      margin-bottom: 15px;
     }
 
     .letra {
       text-align: left;
-      white-space: pre-line;
+      color: #cccccc;
       line-height: 1.6;
-      color: #ccc;
+      white-space: pre-line;
       font-size: 15px;
     }
 
-    @media (min-width: 600px) {
+    @media (max-width: 600px) {
       header {
-        font-size: 26px;
+        font-size: 20px;
       }
+
+      .botones button {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+
       .letra {
-        font-size: 16px;
+        font-size: 14px;
       }
     }
   </style>
@@ -89,67 +99,18 @@
 
   <header>Iglesia Cuadrangular Rey de Gloria</header>
 
-  <div class="botones">
-    <button onclick="mostrarCancion(1)">Canción 1</button>
-    <button onclick="mostrarCancion(2)">Canción 2</button>
-    <button onclick="mostrarCancion(3)">Canción 3</button>
-    <button onclick="mostrarCancion(4)">Canción 4</button>
-  </div>
-
-  <div id="cancion1" class="cancion">
-    <audio controls>
-      <source src="cancion1.mp3" type="audio/mpeg">
-      Tu navegador no soporta el audio.
-    </audio>
-    <div class="letra">
-      Esta es la letra de la Canción 1...<br>
-      Línea 2<br>
-      Línea 3
+  <div class="container">
+    <div class="botones">
+      <button onclick="mostrarCancion(1)">Canción 1</button>
+      <button onclick="mostrarCancion(2)">Canción 2</button>
+      <button onclick="mostrarCancion(3)">Canción 3</button>
+      <button onclick="mostrarCancion(4)">Canción 4</button>
     </div>
-  </div>
 
-  <div id="cancion2" class="cancion">
-    <audio controls>
-      <source src="cancion2.mp3" type="audio/mpeg">
-      Tu navegador no soporta el audio.
-    </audio>
-    <div class="letra">
-      Letra de la Canción 2...<br>
-      Otra línea<br>
-      Y otra más
-    </div>
-  </div>
-
-  <div id="cancion3" class="cancion">
-    <audio controls>
-      <source src="cancion3.mp3" type="audio/mpeg">
-      Tu navegador no soporta el audio.
-    </audio>
-    <div class="letra">
-      Letra de la Canción 3...<br>
-      Más versos aquí
-    </div>
-  </div>
-
-  <div id="cancion4" class="cancion">
-    <audio controls>
-      <source src="cancion4.mp3" type="audio/mpeg">
-      Tu navegador no soporta el audio.
-    </audio>
-    <div class="letra">
-      Canción 4 letra...<br>
-      Adora con gozo y libertad
-    </div>
-  </div>
-
-  <script>
-    function mostrarCancion(num) {
-      for (let i = 1; i <= 4; i++) {
-        document.getElementById('cancion' + i).style.display = 'none';
-      }
-      document.getElementById('cancion' + num).style.display = 'block';
-    }
-  </script>
-
-</body>
-</html>
+    <div id="cancion1" class="cancion">
+      <audio controls>
+        <source src="cancion1.mp3" type="audio/mpeg">
+        Tu navegador no soporta el audio.
+      </audio>
+      <div class="letra">
+        Esta es la letra de la Canción
