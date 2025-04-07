@@ -13,7 +13,7 @@
     }
 
     header {
-      background-color: #e54747; /* Rojo-naranja como MasVida */
+      background-color: #e54747;
       text-align: center;
       padding: 20px 10px;
       font-size: 24px;
@@ -45,4 +45,140 @@
       border-radius: 30px;
       font-size: 16px;
       cursor: pointer;
-      transition: background-color 0.3s, transform
+      transition: background-color 0.3s, transform 0.3s;
+      min-width: 140px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .botones button:hover {
+      background-color: #cc3f3f;
+      transform: scale(1.05);
+    }
+
+    .cancion {
+      display: none;
+      background-color: #2a2a2a;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      max-width: 100%;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    audio {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .letra {
+      text-align: left;
+      color: #dddddd;
+      line-height: 1.6;
+      white-space: pre-line;
+      font-size: 15px;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 20px;
+      }
+
+      .botones button {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+
+      .letra {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>Iglesia Cuadrangular Rey de Gloria</header>
+
+  <div class="container">
+    <div class="botones">
+      <button onclick="mostrarCancion(1)">Canción 1</button>
+      <button onclick="mostrarCancion(2)">Canción 2</button>
+      <button onclick="mostrarCancion(3)">Canción 3</button>
+      <button onclick="mostrarCancion(4)">Canción 4</button>
+    </div>
+
+<div id="cancion1" class="cancion">
+      <audio controls>
+        <source src="cancion1.mp3" type="audio/mpeg">
+        Tu navegador no soporta el audio.
+      </audio>
+      <div class="letra">
+        Esta es la letra de la Canción 1...<br>
+        Línea 2<br>
+        Línea 3
+      </div>
+    </div>
+
+    <div id="cancion2" class="cancion">
+      <audio controls>
+        <source src="cancion2.mp3" type="audio/mpeg">
+        Tu navegador no soporta el audio.
+      </audio>
+      <div class="letra">
+        Letra de la Canción 2...<br>
+        Otra línea<br>
+        Y otra más
+      </div>
+    </div>
+
+    <div id="cancion3" class="cancion">
+      <audio controls>
+        <source src="cancion3.mp3" type="audio/mpeg">
+        Tu navegador no soporta el audio.
+      </audio>
+      <div class="letra">
+        Letra de la Canción 3...<br>
+        Más versos aquí
+      </div>
+    </div>
+
+    <div id="cancion4" class="cancion">
+      <audio controls>
+        <source src="cancion4.mp3" type="audio/mpeg">
+        Tu navegador no soporta el audio.
+      </audio>
+      <div class="letra">
+        Canción 4 letra...<br>
+        Adora con gozo y libertad
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function mostrarCancion(num) {
+      const canciones = document.querySelectorAll('.cancion');
+      canciones.forEach((cancion) => {
+        cancion.style.display = 'none';
+      });
+
+      const seleccionada = document.getElementById('cancion' + num);
+      seleccionada.style.display = 'block';
+      seleccionada.classList.remove('fadeIn');
+      void seleccionada.offsetWidth;
+      seleccionada.classList.add('fadeIn');
+    }
+  </script>
+
+</body>
+</html>
+ 
