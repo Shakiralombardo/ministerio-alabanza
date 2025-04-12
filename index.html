@@ -6,179 +6,304 @@
   <title>Iglesia Cuadrangular Rey de Gloria</title>
   <style>
     body {
+      background-color: white;
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #1a1a1a;
-      color: white;
+      padding: 0;
+      text-align: center;
     }
 
-    header {
-      background-color: #e54747;
-      text-align: center;
-      padding: 20px 10px;
+    .logo {
+      margin-top: 20px;
+    }
+
+    .logo img {
+      width: 80%;
+      max-width: 550px;
+      height: auto;
+    }
+
+    h1 {
+      color: #7b001c;
       font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      margin: 20px 10px;
     }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      text-align: center;
+    h2 {
+      color: #ED632D;
+      font-size: 18px;
+      margin: 20px 10px;
     }
 
-    .botones {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin: 30px 0;
+    .menu {
+      margin: 20px;
     }
 
-    .botones button {
-      background-color: #e54747;
-      border: none;
+    .menu button {
+      background-color: #7b001c;
       color: white;
-      padding: 12px 24px;
-      border-radius: 30px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.3s;
-      min-width: 140px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-
-    .botones button:hover {
-      background-color: #cc3f3f;
-      transform: scale(1.05);
-    }
-
-    .cancion {
-      display: none;
-      background-color: #2a2a2a;
-      padding: 20px;
+      border: none;
       border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-      max-width: 100%;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 0.6s ease-out forwards;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .reproductor {
+      background-color: #000000;
+      border-radius: 40px;
+      padding: 15px;
+      max-width: 90%;
+      margin: 20px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     audio {
       width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
     }
 
     .letra {
-      text-align: left;
-      color: #dddddd;
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 20px;
+      margin: 20px auto;
+      max-width: 90%;
+      font-size: 16px;
       line-height: 1.6;
-      white-space: pre-line;
-      font-size: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 600px) {
-      header {
-        font-size: 20px;
-      }
-
-      .botones button {
-        font-size: 14px;
-        padding: 10px 20px;
-      }
-
-      .letra {
-        font-size: 14px;
-      }
+    .seccion {
+      display: none;
     }
   </style>
+  <script>
+    function mostrarSeccion(id) {
+      document.getElementById("alabanzas").style.display = "none";
+      document.getElementById("adoraciones").style.display = "none";
+      document.getElementById(id).style.display = "block";
+    }
+  </script>
 </head>
 <body>
 
-  <header>Iglesia Cuadrangular Rey de Gloria</header>
+  <!-- Logo -->
+  <div class="logo">
+    <img src="IMG_20250405_170842.jpg" alt="Logo Rey de Gloria">
+  </div>
 
-  <div class="container">
-    <div class="botones">
-      <button onclick="mostrarCancion(1)">Canción 1</button>
-      <button onclick="mostrarCancion(2)">Canción 2</button>
-      <button onclick="mostrarCancion(3)">Canción 3</button>
-      <button onclick="mostrarCancion(4)">Canción 4</button>
-    </div>
+  <!-- Título -->
+  <h1>Ministerio de Alabanza y Adoración</h1>
+  <h2>Canciones para el domingo 06-04-25</h2>
 
-<div id="cancion1" class="cancion">
+  <!-- Menú -->
+  <div class="menu">
+    <button onclick="mostrarSeccion('alabanzas')">Alabanzas</button>
+    <button onclick="mostrarSeccion('adoraciones')">Adoraciones</button>
+  </div>
+
+  <!-- Sección Alabanzas -->
+  <div id="alabanzas" class="seccion">
+    <div class="reproductor">
       <audio controls>
-        <source src="cancion1.mp3" type="audio/mpeg">
-        Tu navegador no soporta el audio.
+        <source src="audio/audio/Marco-barrientos-hossana.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
       </audio>
-      <div class="letra">
-        Esta es la letra de la Canción 1...<br>
-        Línea 2<br>
-        Línea 3
-      </div>
     </div>
-
-    <div id="cancion2" class="cancion">
-      <audio controls>
-        <source src="cancion2.mp3" type="audio/mpeg">
-        Tu navegador no soporta el audio.
-      </audio>
-      <div class="letra">
-        Letra de la Canción 2...<br>
-        Otra línea<br>
-        Y otra más
-      </div>
-    </div>
-
-    <div id="cancion3" class="cancion">
-      <audio controls>
-        <source src="cancion3.mp3" type="audio/mpeg">
-        Tu navegador no soporta el audio.
-      </audio>
-      <div class="letra">
-        Letra de la Canción 3...<br>
-        Más versos aquí
-      </div>
-    </div>
-
-    <div id="cancion4" class="cancion">
-      <audio controls>
-        <source src="cancion4.mp3" type="audio/mpeg">
-        Tu navegador no soporta el audio.
-      </audio>
-      <div class="letra">
-        Canción 4 letra...<br>
-        Adora con gozo y libertad
-      </div>
+    <div class="letra">
+      <!-- Aquí va la letra de la canción como ya la tienes -->
+      <p>
+  Levantamos un clamor<br>
+  Por sanidad y redención<br>
+  Muéstranos lo que tú ves<br>
+  Los secretos de tu corazón
+</p>
+<p>
+  Un pueblo unido pide hoy<br>
+  Tu libertad y salvación<br>
+  Ármanos con tu valor<br>
+  Lo que deseamos es revolución
+</p>
+<p>
+  Que el cielo se parta en dos<br>
+  Inúndanos<br>
+  En el desierto broten ríos<br>
+  Vida sopla hoy
+</p>
+<p>
+  Hosanna al rey de salvación<br>
+  Hosanna al Dios Altísimo<br>
+  Hosanna<br>
+  Jesucristo, Jesucristo es rey
+</p>
+<p>
+  Hosanna al rey de salvación<br>
+  Hosanna al Dios Altísimo<br>
+  Hosanna<br>
+  Jesucristo, Jesucristo es rey
+</p>
+<p>
+  Levantamos un clamor<br>
+  Por sanidad y redención<br>
+  Muéstranos lo que tú ves<br>
+  Los secretos de tu corazón
+</p>
+<p>
+  Un pueblo unido pide hoy<br>
+  Tu libertad y salvación<br>
+  Ármanos con tu valor<br>
+  Lo que deseamos es revolución
+</p>
+<p>
+  Que el cielo se parta en dos<br>
+  Inúndanos<br>
+  En el desierto broten ríos<br>
+  Vida sopla hoy
+</p>
+<p>
+  Hosanna al rey de salvación<br>
+  Hosanna al Dios Altísimo<br>
+  Hosanna<br>
+  Jesucristo, Jesucristo es rey
+</p>
+<p>
+  Hosanna al rey de salvación<br>
+  Hosanna al Dios Altísimo<br>
+  Hosanna<br>
+  Jesucristo, Jesucristo es rey
+</p>
+<p>
+  Hosanna<br>
+  Hosanna<br>
+  Hosanna<br>
+  Hosanna<br>
+  Hosanna al rey<br>
+  Hosanna<br>
+  Hosanna<br>
+  Hosanna al rey<br>
+  Hosanna<br>
+  Hosanna<br>
+  Hosanna al rey<br>
+  Hosanna<br>
+  Hosanna<br>
+  Hosanna al rey
+</p>
+<p>
+  Hosanna al rey de salvación<br>
+  Hosanna al Dios Altísimo<br>
+  Hosanna<br>
+  Jesucristo, Jesucristo es rey
+</p>
+<p>
+  Hosanna al rey de salvación<br>
+  Hosanna al Dios Altísimo<br>
+  Hosanna<br>
+  Jesucristo, Jesucristo es rey, eh hey<br>
+  Sí señor
+</p>
+<p>
+  Nuestro clamor<br>
+  Es oído en los cielos<br>
+  Nuestro clamor es oído en los cielos<br>
+  El clamor de los redimidos<br>
+  La manifestación gloriosa de los hijos de Dios<br>
+  Que claman por salvación<br>
+  Salva Señor<br>
+  Salva Señor<br>
+  Oh
+</p>
+<p>
+  Y declaramos que los cielos se abren sobre de esta nación<br>
+  Declaramos que los cielos se abren sobre de esta nación<br>
+  En el nombre de Jesús
+</p>
+<p>
+  Yo quiero que tu declares conmigo<br>
+  Padre Celestial<br>
+  Yo creo<br>
+  En el poder de la sangre de Jesús<br>
+  En el poder del Espíritu Santo<br>
+  Y en el poder de tu gracia<br>
+  Y yo te pido<br>
+  Abre los cielos sobre de esta nación<br>
+  Muestra tu gloria<br>
     </div>
   </div>
 
-  <script>
-    function mostrarCancion(num) {
-      const canciones = document.querySelectorAll('.cancion');
-      canciones.forEach((cancion) => {
-        cancion.style.display = 'none';
-      });
-
-      const seleccionada = document.getElementById('cancion' + num);
-      seleccionada.style.display = 'block';
-      seleccionada.classList.remove('fadeIn');
-      void seleccionada.offsetWidth;
-      seleccionada.classList.add('fadeIn');
-    }
-  </script>
+  <!-- Sección Adoraciones -->
+  <div id="adoraciones" class="seccion">
+    <div class="reproductor">
+      <audio controls>
+        <source src="audio/audio/Hay_Libertad_Art_Aguilera.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+      </audio>
+    </div>
+    <div class="letra">
+      <p>
+  Hoy puedo danzar con libertad<br>
+  Porque soy su hijo<br>
+  Porque soy su hijo
+</p>
+<p>
+  Hoy puedo danzar con libertad<br>
+  Porque soy amado<br>
+  Porque soy amado
+</p>
+<p>
+  Podemos sentir tu gozo<br>
+  Podemos sentir tu río<br>
+  Hay sanidad en las aguas<br>
+  Queremos danzar
+</p>
+<p>
+  Podemos sentir tu gozo<br>
+  Podemos sentir tu río<br>
+  Hay sanidad en las aguas<br>
+  Queremos danzar
+</p>
+<p>
+  Hay libertad en la casa de Dios<br>
+  Hay libertad en la casa de Dios<br>
+  Hay libertad<br>
+  Hay libertad
+</p>
+<p>
+  Hay libertad en la casa de Dios<br>
+  Hay libertad en la casa de Dios<br>
+  Hay libertad<br>
+  Hay libertad
+</p>
+<p>
+  Podemos sentir tu gozo<br>
+  Podemos sentir tu río<br>
+  Hay sanidad en las aguas<br>
+  Queremos danzar
+</p>
+<p>
+  Podemos sentir tu gozo<br>
+  Podemos sentir tu río<br>
+  Hay sanidad en las aguas<br>
+  Queremos danzar
+</p>
+<p>
+  Hay libertad en la casa de Dios<br>
+  Hay libertad en la casa de Dios<br>
+  Hay libertad<br>
+  Hay libertad
+</p>
+<p>
+  Hay libertad en la casa de Dios<br>
+  Hay libertad en la casa de Dios<br>
+  Hay libertad<br>
+  Hay libertad
+</p>
+<p>
+  Hay libertad en la casa<br>
+</p>
+    </div>
+  </div>
 
 </body>
 </html>
- 
