@@ -1,160 +1,155 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iglesia Rey de Gloria</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Ministerio de Alabanza y Adoración</title>
+
+  <!-- AOS: Animaciones al hacer scroll -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
   <style>
     body {
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #f4f4f4;
-      color: #222;
-    }
-
-    header {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #f8f8f8, #e6f0ff);
+      background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+      background-blend-mode: overlay;
+      color: #333;
       text-align: center;
-      padding: 30px 10px 10px;
+      padding-bottom: 100px;
     }
-
     header img {
-      width: 130px;
-      height: auto;
+      width: 200px;
+      margin-top: 20px;
     }
-
     h1 {
       font-size: 28px;
-      font-weight: 700;
       margin: 10px 0 5px;
     }
-
     h2 {
       font-size: 18px;
-      font-weight: 400;
+      font-weight: normal;
       color: #555;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     .card {
+      width: 90%;
+      max-width: 350px;
+      margin: 40px auto;
       border-radius: 20px;
-      margin: 20px auto;
-      max-width: 90%;
       padding: 20px;
       color: white;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: scale(1.02);
+      transform: scale(1.03);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     }
 
-    .card h3 {
-      margin: 0;
-      font-size: 24px;
-    }
-
-    .card p {
-      margin: 5px 0;
-    }
-
-    .etiqueta {
-      background-color: rgba(255,255,255,0.9);
-      color: #000;
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .fucsia { background: linear-gradient(90deg, #f72585, #b5179e); }
-    .morado { background: linear-gradient(90deg, #7209b7, #3a0ca3); }
-    .naranja { background: linear-gradient(90deg, #ff9f1c, #ff6a00); }
-
-    .contenido {
-      display: none;
-      margin-top: 15px;
-      background: #ffffff;
-      color: #000;
-      padding: 15px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .contenido audio {
-      width: 100%;
-      margin-top: 10px;
-    }
-
-    .fecha {
-      text-align: center;
+    .card.expanded {
       margin-top: 40px;
-      font-weight: bold;
-      padding: 10px;
-      border: 2px solid #000;
+      z-index: 10;
+      animation: expandCard 0.4s ease-in-out;
+    }
+
+    @keyframes expandCard {
+      from {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+      to {
+        transform: scale(1.03);
+        opacity: 1;
+      }
+    }
+
+    .card-content {
+      margin-bottom: 10px;
+    }
+
+    .card audio, .card .lyrics {
+      display: none;
+    }
+
+    .card.expanded audio,
+    .card.expanded .lyrics {
+      display: block;
+      margin-top: 15px;
+    }
+
+    .tag {
+      background: white;
+      color: #333;
       display: inline-block;
-      border-radius: 25px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .card1 { background: linear-gradient(135deg, #f72585, #7209b7); }
+    .card2 { background: linear-gradient(135deg, #4361ee, #3a0ca3); }
+    .card3 { background: linear-gradient(135deg, #fca311, #ff6f00); }
+
+    .lyrics {
+      background: rgba(255,255,255,0.2);
+      padding: 10px;
+      border-radius: 10px;
+      text-align: left;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="IMG_20250405_170842.jpg" alt="Logo">
+    <img alt="Logo Rey de Gloria" src="https://i.ibb.co/JmLCPV9/logo-rey-de-gloria.png"/>
     <h1>MINISTERIO DE ALABANZA Y ADORACIÓN</h1>
     <h2>Alabanzas para este domingo</h2>
   </header>
 
-  <div class="card fucsia" onclick="toggleContenido('c1')">
-    <p>Hillsong</p>
-    <h3>Tómalo</h3>
-    <div class="etiqueta">ALABANZA 1</div>
-    <div id="c1" class="contenido">
-      <p>Letra de la canción Tómalo...</p>
-      <audio controls>
-        <source src="audio/tomalo.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio.
-      </audio>
+  <div class="card card1" onclick="toggleCard(this)" data-aos="fade-up" data-aos-duration="1000">
+    <div class="tag">ALABANZA 1</div>
+    <div class="card-content">
+      <strong>Hillsong</strong><br/>
+      <h3>Tómalo</h3>
     </div>
+    <div class="lyrics">Letra de la canción Tómalo...</div>
+    <audio controls="" src="tomalo.mp3"></audio>
   </div>
 
-  <div class="card morado" onclick="toggleContenido('c2')">
-    <p>Emir Sensini</p>
-    <h3>Gracia Sublime Es</h3>
-    <div class="etiqueta">ALABANZA 2</div>
-    <div id="c2" class="contenido">
-      <p>Letra de Gracia Sublime Es...</p>
-      <audio controls>
-        <source src="audio/gracia.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio.
-      </audio>
+  <div class="card card2" onclick="toggleCard(this)" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+    <div class="tag">ALABANZA 2</div>
+    <div class="card-content">
+      <strong>Emir Sensini</strong><br/>
+      <h3>Gracia Sublime Es</h3>
     </div>
+    <div class="lyrics">Letra de la canción Gracia Sublime Es...</div>
+    <audio controls="" src="gracia.mp3"></audio>
   </div>
 
-  <div class="card naranja" onclick="toggleContenido('c3')">
-    <p>Sarai Rivera</p>
-    <h3>Jesús</h3>
-    <div class="etiqueta">ADORACIÓN</div>
-    <div id="c3" class="contenido">
-      <p>Letra de la canción Jesús...</p>
-      <audio controls>
-        <source src="audio/jesus.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio.
-      </audio>
+  <div class="card card3" onclick="toggleCard(this)" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+    <div class="tag">ADORACIÓN</div>
+    <div class="card-content">
+      <strong>Sarai Rivera</strong><br/>
+      <h3>Jesús</h3>
     </div>
-  </div>
-
-  <div style="text-align: center; margin: 30px auto;">
-    <div class="fecha">13 DE ABRIL, 2025</div>
-    <p>CVC Rey de Gloria</p>
+    <div class="lyrics">Letra de la canción Jesús...</div>
+    <audio controls="" src="jesus.mp3"></audio>
   </div>
 
   <script>
-    function toggleContenido(id) {
-      const el = document.getElementById(id);
-      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    AOS.init();
+
+    function toggleCard(card) {
+      document.querySelectorAll('.card').forEach(c => c.classList.remove('expanded'));
+      card.classList.toggle('expanded');
     }
   </script>
 </body>
