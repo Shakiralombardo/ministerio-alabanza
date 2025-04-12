@@ -1,172 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ministerio de Alabanza</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iglesia Rey de Gloria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #1a1a1a;
-      color: #fff;
+      background-color: #f4f4f4;
+      color: #222;
     }
 
     header {
-      background-color: #800000; /* Vino tinto */
-      padding: 20px 10px;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      padding: 30px 10px 10px;
     }
 
-    header img.logo {
+    header img {
       width: 130px;
       height: auto;
-      margin-bottom: 10px;
     }
 
-    header h1 {
-      font-size: 26px;
-      margin: 0;
-      font-weight: bold;
-      color: #f9e0b5; /* Dorado claro */
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 10px 0 5px;
     }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
+    h2 {
+      font-size: 18px;
+      font-weight: 400;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      border-radius: 20px;
+      margin: 20px auto;
+      max-width: 90%;
       padding: 20px;
-      text-align: center;
-    }
-
-    .botones {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin: 30px 0;
-      animation: fadeIn 1.2s ease;
-    }
-
-    .botones button {
-      background-color: #800000;
-      border: 2px solid #f9e0b5;
-      color: #f9e0b5;
-      padding: 12px 24px;
-      border-radius: 30px;
-      font-size: 16px;
+      color: white;
       cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-      animation: slideUp 0.6s ease forwards;
-      opacity: 0;
+      transition: transform 0.3s ease;
     }
 
-    .botones button:nth-child(1) { animation-delay: 0.2s; }
-    .botones button:nth-child(2) { animation-delay: 0.4s; }
-    .botones button:nth-child(3) { animation-delay: 0.6s; }
-    .botones button:nth-child(4) { animation-delay: 0.8s; }
-
-    .botones button:hover {
-      background-color: #a52a2a;
-      transform: scale(1.05);
+    .card:hover {
+      transform: scale(1.02);
     }
 
-    .letra {
-      background-color: #2a2a2a;
+    .card h3 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .card p {
+      margin: 5px 0;
+    }
+
+    .etiqueta {
+      background-color: rgba(255,255,255,0.9);
+      color: #000;
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .fucsia { background: linear-gradient(90deg, #f72585, #b5179e); }
+    .morado { background: linear-gradient(90deg, #7209b7, #3a0ca3); }
+    .naranja { background: linear-gradient(90deg, #ff9f1c, #ff6a00); }
+
+    .contenido {
+      display: none;
+      margin-top: 15px;
+      background: #ffffff;
+      color: #000;
+      padding: 15px;
       border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      margin-top: 20px;
-      text-align: left;
-      color: #f5f5f5;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    audio {
+    .contenido audio {
       width: 100%;
-      margin-top: 20px;
-      background-color: transparent;
+      margin-top: 10px;
     }
 
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 20px;
-      }
-
-      .botones button {
-        width: 100%;
-      }
-
-      .letra {
-        font-size: 14px;
-      }
+    .fecha {
+      text-align: center;
+      margin-top: 40px;
+      font-weight: bold;
+      padding: 10px;
+      border: 2px solid #000;
+      display: inline-block;
+      border-radius: 25px;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <img src="IMG_20250405_170842.jpg" alt="Logo" class="logo">
-    <h1>Ministerio de Alabanza y Adoración</h1>
+    <img src="IMG_20250405_170842.jpg" alt="Logo">
+    <h1>MINISTERIO DE ALABANZA Y ADORACIÓN</h1>
+    <h2>Alabanzas para este domingo</h2>
   </header>
 
-  <div class="container">
-    <div class="botones">
-      <button onclick="mostrarCancion(1)">Canción 1</button>
-      <button onclick="mostrarCancion(2)">Canción 2</button>
-      <button onclick="mostrarCancion(3)">Canción 3</button>
-      <button onclick="mostrarCancion(4)">Canción 4</button>
+  <div class="card fucsia" onclick="toggleContenido('c1')">
+    <p>Hillsong</p>
+    <h3>Tómalo</h3>
+    <div class="etiqueta">ALABANZA 1</div>
+    <div id="c1" class="contenido">
+      <p>Letra de la canción Tómalo...</p>
+      <audio controls>
+        <source src="audio/tomalo.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
     </div>
+  </div>
 
-    <div id="cancion-container"></div>
+  <div class="card morado" onclick="toggleContenido('c2')">
+    <p>Emir Sensini</p>
+    <h3>Gracia Sublime Es</h3>
+    <div class="etiqueta">ALABANZA 2</div>
+    <div id="c2" class="contenido">
+      <p>Letra de Gracia Sublime Es...</p>
+      <audio controls>
+        <source src="audio/gracia.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+    </div>
+  </div>
+
+  <div class="card naranja" onclick="toggleContenido('c3')">
+    <p>Sarai Rivera</p>
+    <h3>Jesús</h3>
+    <div class="etiqueta">ADORACIÓN</div>
+    <div id="c3" class="contenido">
+      <p>Letra de la canción Jesús...</p>
+      <audio controls>
+        <source src="audio/jesus.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin: 30px auto;">
+    <div class="fecha">13 DE ABRIL, 2025</div>
+    <p>CVC Rey de Gloria</p>
   </div>
 
   <script>
-    const canciones = {
-      1: {
-        audio: "cancion1.mp3",
-        letra: "Letra de la Canción 1..."
-      },
-      2: {
-        audio: "cancion2.mp3",
-        letra: "Letra de la Canción 2..."
-      },
-      3: {
-        audio: "cancion3.mp3",
-        letra: "Letra de la Canción 3..."
-      },
-      4: {
-        audio: "cancion4.mp3",
-        letra: "Letra de la Canción 4..."
-      }
-    };
-
-    function mostrarCancion(num) {
-      const contenedor = document.getElementById("cancion-container");
-      const cancion = canciones[num];
-
-      contenedor.innerHTML = `
-        <audio controls>
-          <source src="${audio/audio/Marco-Barrientos-hossana.mp3}" type="audio/mpeg">
-          Tu navegador no soporta el reproductor de audio.
-        </audio>
-        <div class="letra">
-          ${cancion.letra}
-        </div>
-      `;
+    function toggleContenido(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
     }
   </script>
-
 </body>
 </html>
