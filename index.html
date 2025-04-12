@@ -20,17 +20,18 @@
       text-align: center;
       padding-bottom: 100px;
     }
-    
+
     header img {
-  width: 260px; /* o el tamaño que tú quieras */
-  margin-top: 10px;
-  margin-bottom: 1px; /* Reduce el espacio debajo del logo */
+      width: 260px;
+      margin-top: 10px;
+      margin-bottom: 1px;
     }
-    
+
     h1 {
       font-size: 28px;
       margin: 10px 0 5px;
     }
+
     h2 {
       font-size: 18px;
       font-weight: normal;
@@ -49,6 +50,7 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
     }
 
     .card:hover {
@@ -77,16 +79,6 @@
       margin-bottom: 10px;
     }
 
-    .card audio, .card .lyrics {
-      display: none;
-    }
-
-    .card.expanded audio,
-    .card.expanded .lyrics {
-      display: block;
-      margin-top: 15px;
-    }
-
     .tag {
       background: white;
       color: #333;
@@ -102,11 +94,22 @@
     .card2 { background: linear-gradient(135deg, #4361ee, #3a0ca3); }
     .card3 { background: linear-gradient(135deg, #fca311, #ff6f00); }
 
-    .lyrics {
+    .card-details {
       background: rgba(255,255,255,0.2);
       padding: 10px;
       border-radius: 10px;
       text-align: left;
+      display: none;
+      margin-top: 15px;
+    }
+
+    .card.expanded .card-details {
+      display: block;
+    }
+
+    .card-details audio {
+      width: 100%;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -117,63 +120,96 @@
     <h2>Alabanzas para este domingo</h2>
   </header>
 
+  <!-- ALABANZA 1 -->
   <div class="card card1" onclick="toggleCard(this)" data-aos="fade-up" data-aos-duration="1000">
     <div class="tag">ALABANZA 1</div>
     <div class="card-content">
       <strong>Hillsong</strong><br/>
       <h3>Tómalo</h3>
     </div>
-    <div class="lyrics"><p><strong>VERSO 1:</strong><br>
-  De todo lugar<br>
-  Los perdidos vendrán<br>
-  En libertad<br>
-  A ti clamarán<br>
-  Llevaste la cruz<br>
-  Moriste y vivo estás<br>
-  Mi Dios, a ti mi vida te daré</p>
+    <div class="card-details">
+      <p><strong>VERSO 1:</strong><br>
+      De todo lugar<br>
+      Los perdidos vendrán<br>
+      En libertad<br>
+      A ti clamarán<br>
+      Llevaste la cruz<br>
+      Moriste y vivo estás<br>
+      Mi Dios, a ti mi vida te daré</p>
 
-  <p><strong>VERSO 2:</strong><br>
-  Enviaste a Jesús<br>
-  Por mi salvación<br>
-  Por la eternidad<br>
-  En ti tengo perdón<br>
-  Busqué la verdad<br>
-  Y te encontré a ti<br>
-  Mi Dios, a ti mi vida te daré</p>
+      <p><strong>VERSO 2:</strong><br>
+      Enviaste a Jesús<br>
+      Por mi salvación<br>
+      Por la eternidad<br>
+      En ti tengo perdón<br>
+      Busqué la verdad<br>
+      Y te encontré a ti<br>
+      Mi Dios, a ti mi vida te daré</p>
 
-  <p><strong>CORO:</strong><br>
-  Jesús, por ti yo viviré<br>
-  De ti nunca me avergonzaré<br>
-  Te doy todo lo que soy<br>
-  Toma, tómalo<br>
-  Toma, tómalo</p>
+      <p><strong>CORO:</strong><br>
+      Jesús, por ti yo viviré<br>
+      De ti nunca me avergonzaré<br>
+      Te doy todo lo que soy<br>
+      Toma, tómalo<br>
+      Toma, tómalo</p>
 
-  <p><strong>PUENTE:</strong><br>
-  Eres el que vista al ciego das<br>
-  Brillas en la oscuridad<br>
-  La salvación del mundo en tus manos está</p>
-    </div> </div>
-    <audio controls="" src="audio/audio/Tomalo-hillsong.mp3"></audio>
+      <p><strong>PUENTE:</strong><br>
+      Eres el que vista al ciego das<br>
+      Brillas en la oscuridad<br>
+      La salvación del mundo en tus manos está</p>
+
+      <audio controls src="audio/audio/Tomalo-hillsong.mp3"></audio>
+    </div>
   </div>
 
+  <!-- ALABANZA 2 -->
   <div class="card card2" onclick="toggleCard(this)" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
     <div class="tag">ALABANZA 2</div>
     <div class="card-content">
       <strong>Emir Sensini</strong><br/>
       <h3>Gracia Sublime Es</h3>
     </div>
-    <div class="lyrics">Letra de la canción Gracia Sublime Es...</div>
-    <audio controls="" src="audio/audio/Gracia-sublime-emir.mp3"></audio>
+    <div class="card-details">
+      <p><strong>Ejemplo de letra:</strong><br>
+      Quién rompe el poder del pecado<br>
+      Su amor es fuerte y poderoso<br>
+      El Rey de Gloria, el Rey de majestad</p>
+
+      <p>Conmueve al mundo con su estruendo<br>
+      Y nos asombra con maravillas<br>
+      El Rey de Gloria, el Rey sobre todo Rey</p>
+
+      <p><strong>Coro:</strong><br>
+      Gracia sublime es<br>
+      Perfecto es tu amor<br>
+      Tomaste mi lugar<br>
+      Cargaste tú mi cruz</p>
+
+      <audio controls src="audio/audio/Gracia-sublime-emir.mp3"></audio>
+    </div>
   </div>
 
+  <!-- ADORACIÓN -->
   <div class="card card3" onclick="toggleCard(this)" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
     <div class="tag">ADORACIÓN</div>
     <div class="card-content">
       <strong>Sarai Rivera</strong><br/>
       <h3>Jesús</h3>
     </div>
-    <div class="lyrics">Letra de la canción Jesús...</div>
-    <audio controls="" src="audio/audio/Sarai-rivera-jesus.mp3"></audio>
+    <div class="card-details">
+      <p><strong>Ejemplo de letra:</strong><br>
+      Jesús, nombre sin igual<br>
+      Fuente de paz y amor<br>
+      Todo mi ser rinde honor<br>
+      A ti mi Salvador</p>
+
+      <p>Te exalto con mi voz<br>
+      Eres mi adoración<br>
+      Mi esperanza está en ti<br>
+      Jesús, mi redentor</p>
+
+      <audio controls src="audio/audio/Sarai-rivera-jesus.mp3"></audio>
+    </div>
   </div>
 
   <script>
