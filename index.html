@@ -128,6 +128,7 @@
       <h3>Tómalo</h3>
     </div>
     <div class="card-details">
+      <audio controls src="audio/audio/Hossana-marcos-barrientos.mp3"></audio>
     <p>Levantamos un clamor<br>
 Por sanidad y redención<br>
 Muéstranos lo que tú ves<br>
@@ -229,8 +230,6 @@ Abre los cielos sobre de esta nación<br>
 Muestra tu gloria<br>
 Muestra tu poder una vez más<br>
 Sí señor, yeah</p>
-
-      <audio controls src="audio/audio/Hossana-marcos-barrientos.mp3"></audio>
     </div>
   </div>
 
@@ -242,8 +241,68 @@ Sí señor, yeah</p>
       <h3>Gracia Sublime Es</h3>
     </div>
     <div class="card-details">
-
       <audio controls src="audio/audio/Gracia-sublime-emir.mp3"></audio>
+    <p>¡El grito de júbilo!</p>
+
+<p>Quién rompe el poder del pecado<br>
+Su amor es fuerte y poderoso<br>
+El Rey de gloria, El Rey de majestad</p>
+
+<p>Conmueve el mundo con su estruendo<br>
+Y nos asombra con maravillas<br>
+El Rey de gloria, El Rey de majestad</p>
+
+<p>Gracia sublime es<br>
+Perfecto es tu amor<br>
+Tomaste mi lugar<br>
+Cargaste tú mi cruz<br>
+Tu vida diste ahí<br>
+Y ahora libre soy<br>
+Jesús, te adoro<br>
+Por lo que hiciste en mí</p>
+
+<p>Pusiste en orden todo el caos<br>
+Nos adoptaste como tus hijos<br>
+El Rey de gloria, El Rey de majestad</p>
+
+<p>El que gobierna con su justicia<br>
+Y resplandece con su belleza<br>
+El Rey de gloria, El Rey de majestad, oh</p>
+
+<p>Gracia sublime es<br>
+Perfecto es tu amor<br>
+Tomaste mi lugar<br>
+Cargaste tú mi cruz<br>
+Tu vida diste ahí<br>
+Y ahora libre soy, oh-oh<br>
+Jesús, te adoro<br>
+Por lo que hiciste en mí</p>
+
+<p>Levanta tus manos al Rey</p>
+
+<p>Digno es el Cordero de Dios<br>
+Digno es el Rey que la muerte venció<br>
+Digno es el Cordero de Dios<br>
+Digno es el Rey que la muerte venció<br>
+Digno es el Cordero de Dios<br>
+Digno es el Rey que la muerte venció<br>
+Digno es el Cordero de Dios<br>
+Digno, digno, digno, oh, uoh</p>
+
+<p>Gracia sublime es<br>
+Perfecto es tu amor<br>
+Tomaste mi lugar<br>
+Cargaste tú mi cruz<br>
+Tu vida diste ahí<br>
+Y ahora libre soy, oh-oh<br>
+Jesús, te adoro<br>
+Por lo que hiciste en mí</p>
+
+<p>Uoh-oh-oh-oh, oh<br>
+Uoh-oh-oh-oh, oh</p>
+
+<p>Gracia sublime es<br>
+Uoh-oh-oh-oh, oh</p>
     </div>
   </div>
 
@@ -255,6 +314,7 @@ Sí señor, yeah</p>
       <h3>Jesús</h3>
     </div>
     <div class="card-details">
+      <audio controls src="audio/audio/Sarai-rivera-jesus.mp3"></audio>
       <p>Santo es el que vive, santo es el que reina<br>
 Santo en las alturas, santo aquí en la tierra<br>
 Santo en el pesebre, santo en el sepulcro<br>
@@ -398,18 +458,30 @@ Jesús, Jesús, Jesús, Jesús (¡aleluya!)</p>
 Santo es el cordero<br>
 Amén</p>
 
-
-      <audio controls src="audio/audio/Sarai-rivera-jesus.mp3"></audio>
     </div>
   </div>
 
-  <script>
-    AOS.init();
+<script>
+  AOS.init();
 
-    function toggleCard(card) {
-      document.querySelectorAll('.card').forEach(c => c.classList.remove('expanded'));
-      card.classList.toggle('expanded');
-    }
-  </script>
+  // Detiene otros audios cuando uno se reproduce
+  const audios = document.querySelectorAll('audio');
+  audios.forEach(audio => {
+    audio.addEventListener('play', () => {
+      audios.forEach(otherAudio => {
+        if (otherAudio !== audio) {
+          otherAudio.pause();
+          otherAudio.currentTime = 0; // Opcional: reinicia el audio
+        }
+      });
+    });
+  });
+
+  function toggleCard(card) {
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('expanded'));
+    card.classList.toggle('expanded');
+  }
+</script>
+
 </body>
 </html>
